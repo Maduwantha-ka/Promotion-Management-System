@@ -8,6 +8,7 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
 import UpdateUserProfile from './components/UpdateUserProfile/UpdateUserProfile';
+import AdminLogin from './components/AdminLogin/AdminLogin';
 
 
   
@@ -26,6 +27,7 @@ function App() {
       <Route path="/login" element={<Login />}/>
       <Route path="/userprofile" element={<UserProfile />}/>
       <Route path="/updateprofile/:id" element={<UpdateUserProfile />}/>
+      <Route path="/adminlogin" element={<AdminLogin />}/>
 
       
     </Routes>
