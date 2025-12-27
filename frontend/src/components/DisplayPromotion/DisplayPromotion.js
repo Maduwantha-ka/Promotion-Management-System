@@ -30,7 +30,12 @@ function DisplayPromotion() {
     }
 }
   return (
-    <div>
+    <div className='whole Div tag'>
+        <div className='Adding New Promotions'>
+        <h1>Adding New Promotions</h1>
+      <button onClick={()=>(window.location.href='/addpromotion')}>Add Promotion</button>
+      </div>
+      <div className='Promotion Item display'>
       <h1>Promotion Item</h1>
       <table>
         <thead>
@@ -64,6 +69,8 @@ function DisplayPromotion() {
             ))}
         </tbody>
       </table>
+      </div>
+      
     </div>
   )
 }

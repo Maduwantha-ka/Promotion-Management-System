@@ -40,7 +40,8 @@ function AddPromotion() {
     const updatePromotion = {...promotion, itemImage: imageName};
     await axios.post("http://localhost:8080/promotion", updatePromotion);
     alert("Promotion Added Successfully");
-    window.location.reload();
+    // navigate to display promotion page
+    window.location.href="/displaypromotion";
   }
   return (
     <div>

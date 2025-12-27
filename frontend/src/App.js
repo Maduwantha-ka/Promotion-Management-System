@@ -18,7 +18,7 @@ function App() {
   <div>
 <React.Fragment>
     <Routes>
-      <Route path="/" element={<Home/>} />
+      <Route path="/" element={<Login/>} />
       <Route path="/addpromotion" element={<AddPromotion/>}/>
       <Route path="/displaypromotion" element={<DisplayPromotion/>}/>
       <Route path="/updatepromotion/:id" element={<UpdatePromotion />}/>

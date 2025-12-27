@@ -18,7 +18,7 @@ const onSubmit =(e) =>{
     if(username === 'admin' && password === '123'){
         alert("Admin Login Successful");
         // this is the path called
-        window.location.href= '/displaypromotion'
+        window.location.href= '/userprofile'
         // setError('')
     }else{
         alert("Invalid Admin Credentials");
@@ -27,6 +27,7 @@ const onSubmit =(e) =>{
 }
   return (
     <div>
+        <h1>This is Admin Login Page</h1>
         <form onSubmit={onSubmit}>
       
 
@@ -37,6 +38,7 @@ const onSubmit =(e) =>{
         <input type="password" id="password" name="password" onChange={onInputChange} value={password} required /><br/><br/><br/>
 
         <button type="submit">Login</button>
+        
     </form>
       
     </div>

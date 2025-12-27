@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import './Login.css';
+
+
 
 function Login() {
 
@@ -15,7 +18,8 @@ const onSubmit = async(e) =>{
         if(response.data.id){
             localStorage.setItem('userId', response.data.id);
             alert("Login Successful");
-            window.location.href="/userprofile";
+            window.location.href="/displaypromotion";
+            // window.location.href="/userprofile";
         }else{
             alert("Invalid Credentials");
         }
@@ -26,18 +30,26 @@ const onSubmit = async(e) =>{
     
 }
   return (
-    <div>
+    <div >
+      
+      
+      <div className='login main page' >
+      <div className='formCreation'>
       <form onSubmit={(e)=>onSubmit(e)}>
       
-
+        <h2>Login Page</h2>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" onChange={(e) =>setEmail(e.target.value)} value={email} required /><br/><br/><br/>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" onChange={(e) =>setPassword(e.target.value)} value={password} required /><br/><br/><br/>
 
-        <button type="submit">Login</button>
+        <button type="submit">User Login</button>
+        <h3>If you are an admin, please login here </h3>
+        <button onClick={()=>(window.location.href='/adminlogin')}>Admin Login</button>
     </form>
+    </div>
+    </div>
     </div>
   )
 }

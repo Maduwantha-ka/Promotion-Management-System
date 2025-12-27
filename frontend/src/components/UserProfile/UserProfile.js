@@ -49,6 +49,12 @@ function UserProfile() {
     
     return (
     <div>
+        <div>
+            <h1>Welcome to User Profile Page</h1>
+        </div>
+        <div>
+            <button onClick={()=>window.location.href='/register'}>Add User</button>
+        </div>
         <h2>User Profile</h2>
         {user ?(
             <div>
