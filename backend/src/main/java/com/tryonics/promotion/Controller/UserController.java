@@ -65,4 +65,13 @@ public class UserController {
                     return userRepository.save(userModel);
                 }).orElseThrow(()-> new UserNotFoundException(id));
     }
+    //delete controller
+    @DeleteMapping("/user/{id}")
+    String deleteProfile (@PathVariable Long id){
+        if (!userRepository.existsById(id)){
+            throw new UserNotFoundException(id);
+        }
+        userRepository.deleteById(id);
+        return "User Account" + id +"deleted";
+    }
 }

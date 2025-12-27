@@ -26,6 +26,22 @@ function UserProfile() {
     const UpdateNavigate =(id)=>{
         window.location.href = `/updateprofile/${id}`
     }
+
+    // delete Function
+    const deleteAccount = async()=>{
+        const confirmation = 
+        window.confirm("Are you sure you want to delete your account?");
+        if(confirmation){
+            try{
+                await axios.delete(`http://localhost:8080/user/${user.id}`);
+                alert("Account deleted successfully");
+                localStorage.removeItem('userId');
+                window.location.href = '/register';
+            }catch(error){
+                alert("Error deleting account");
+            }
+        }
+    }
     if(loading)
         return <p>Loading...</p>;
     if(error)
@@ -41,6 +57,7 @@ function UserProfile() {
                 <p>Passowrd:{user.password}</p>
                 <p>Phone:{user.phone}</p>
                  <button onClick={()=>UpdateNavigate(user.id)}>update</button>
+                 <button onClick={()=>deleteAccount(user.id)}>Delete</button>
             </div>
         ):(<p>No user data available</p>
         )}
